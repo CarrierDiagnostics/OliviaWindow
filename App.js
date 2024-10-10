@@ -49,7 +49,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerText}>Olivia's Blogosphere</Text>
+        <Text style={styles.headerText}>Olivia's Window</Text>
       </View>
       <View style={styles.content}>
         <View style={styles.navbar}>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 60,
-    backgroundColor: '#3498db',
+    backgroundColor: '40E0D0', //Turquoise
     justifyContent: 'center',
     alignItems: 'center',
   },
