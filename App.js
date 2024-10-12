@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, FlatList, TouchableOpacity, Image } from 'react
 export default function App() {
   const [selectedBlog, setSelectedBlog] = useState(null);
   const [blogTitles, setBlogTitles] = useState([]); // Assuming you have a state for blogTitles
-
   const loadBlogContent = async (title) => {
     try {
       console.log("trying to get stuff");
