@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native-web';
 
 export default function App() {
   const [selectedBlog, setSelectedBlog] = useState(null);
@@ -8,9 +8,9 @@ export default function App() {
   const loadBlogContent = async (title) => {
     try {
       console.log("trying to get stuff");
-      const blogFileUri = `https://www.carriertech.uk/blogs/${encodeURIComponent(title)}.txt`;
-      const response = await fetch(`https://cors-anywhere.herokuapp.com/https://www.carriertech.uk/blogs/${encodeURIComponent(title)}`);
-      console.log(`https://cors-anywhere.herokuapp.com/https://www.carriertech.uk/blogs/${encodeURIComponent(title)}`);
+      const blogFileUri = `https://carriertech.uk/blogs/${encodeURIComponent(title)}.txt`;
+      const response = await fetch(`https://cors-anywhere.herokuapp.com/https://carriertech.uk/blogs/${encodeURIComponent(title)}`);
+      console.log(`https://cors-anywhere.herokuapp.com/https://carriertech.uk/blogs/${encodeURIComponent(title)}`);
       console.log(response);
       const content = await response.text();
       setSelectedBlog({ title, content });
@@ -21,7 +21,7 @@ export default function App() {
 
   const loadBlogTitles = async () => {
     try {
-      const response = await fetch('https://cors-anywhere.herokuapp.com/https://www.carriertech.uk/blogs', {
+      const response = await fetch('https://cors-anywhere.herokuapp.com/https://carriertech.uk/blogs', {
         method: 'GET',
         headers: {
           'Origin': 'http://localhost:8081', // Your local development URL
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 60,
-    backgroundColor: '40E0D0', //Turquoise
+    backgroundColor: '#40E0D0', //Turquoise
     justifyContent: 'center',
     alignItems: 'center',
   },
